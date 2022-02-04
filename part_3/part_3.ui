@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
+    <width>603</width>
     <height>592</height>
    </rect>
   </property>
@@ -32,7 +32,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Широта:</string>
+        <string>Долгота:</string>
        </property>
       </widget>
      </item>
@@ -55,7 +55,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Долгота:</string>
+        <string>Широта:</string>
        </property>
       </widget>
      </item>
@@ -77,8 +77,8 @@
    <widget class="QLabel" name="image">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>0</x>
+      <y>0</y>
       <width>601</width>
       <height>451</height>
      </rect>
@@ -93,7 +93,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>618</width>
+     <width>603</width>
      <height>21</height>
     </rect>
    </property>
