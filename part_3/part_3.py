@@ -11,7 +11,7 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('part_3.ui', self)
-        self.pushButton.clicked.connect(self.getImage)
+        self.search_btn.clicked.connect(self.getImage)
 
     def getImage(self):
         params = {
@@ -30,6 +30,9 @@ class MyWidget(QMainWindow):
             self.image.setPixmap(pixmap)
 
     def keyPressEvent(self, event):
+        self.lineEdit.clearFocus()
+        self.lineEdit_2.clearFocus()
+        self.lineEdit_3.clearFocus()
         long = float(self.lineEdit.text())
         lat = float(self.lineEdit_2.text())
         scale = int(self.lineEdit_3.text())
@@ -41,10 +44,10 @@ class MyWidget(QMainWindow):
             self.lineEdit_3.setText(str(scale))
         elif event.key() == Qt.Key_Right and long < 179:
             long += 1
-            self.lineEdit.setText(str(lat))
+            self.lineEdit.setText(str(long))
         elif event.key() == Qt.Key_Left and long > -180:
             long -= 1
-            self.lineEdit.setText(str(lat))
+            self.lineEdit.setText(str(long))
         elif event.key() == Qt.Key_Up and lat < 90:
             lat += 1
             self.lineEdit_2.setText(str(lat))
@@ -52,7 +55,6 @@ class MyWidget(QMainWindow):
             lat -= 1
             self.lineEdit_2.setText(str(lat))
         self.getImage()
-
 
     def closeEvent(self, event):
         os.remove(self.map_file)
